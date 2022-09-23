@@ -4,134 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.MainActivity"
-    android:background="@color/main">
+    android:background="@color/main"
+    tools:context=".Main.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="57dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="61dp"
+                android:layout_marginEnd="29dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="45.39dp"
+                    android:layout_height="49dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/hamburger"
+                    android:layout_width="23dp"
+                    android:layout_height="18dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hamburger"
+                    app:layout_constraintBottom_toBottomOf="@+id/logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/logo" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/noavatar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/Shapes.circle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/meet_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="29dp"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="center"
+                android:text="С возвращением, (Аноним)!"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header" />
+
+            <TextView
+                android:id="@+id/meet_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/alegreya_sans"
+                android:gravity="center"
+                android:text="Каким ты себя ощущаешь сегодня?"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/meet_text" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="27dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/meet_text2">
+
+                <LinearLayout
+                    android:id="@+id/feelings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/div"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="25dp"
+                    android:showDividers="middle">
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/quotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/div26"
+                android:orientation="vertical"
+                android:showDividers="middle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottombar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="29dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/header">
-
-        <ImageView android:id="@+id/logo"
-            android:layout_width="45.39dp"
-            android:layout_height="49dp"
-            android:src="@drawable/logo"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginHorizontal="77dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
-            android:background="@android:color/transparent"
-            android:id="@+id/hamburger"
-            android:layout_width="23dp"
-            android:layout_height="18dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/hamburger"
-            app:layout_constraintBottom_toBottomOf="@+id/logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/logo" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/noavatar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:shapeAppearance="@style/Shapes.circle"
-            android:scaleType="fitXY"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView android:id="@+id/meet_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/alegreya_bold"
-        android:text="С возвращением, (Аноним)!"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        android:layout_marginTop="29dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="25dp"
-        android:gravity="center"/>
-
-    <TextView android:id="@+id/meet_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/alegreya_sans"
-        android:text="Каким ты себя ощущаешь сегодня?"
-        app:layout_constraintTop_toBottomOf="@id/meet_text"
-        android:layout_marginTop="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="25dp"
-        android:gravity="center"
-        android:alpha="0.7"/>
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        app:layout_constraintTop_toBottomOf="@id/meet_text2"
-        android:layout_marginTop="27dp"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:showDividers="middle"
-            android:divider="@drawable/div"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="25dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/variant"
-                android:text="Здесь живут драконы..."
-                android:fontFamily="@font/alegreya_regular"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/variant"
-                android:text="Здесь живут драконы..."
-                android:fontFamily="@font/alegreya_regular"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/variant"
-                android:text="Здесь живут драконы..."
-                android:fontFamily="@font/alegreya_regular"/>
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:layout_marginHorizontal="77dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/bottombar">
-
-        <ImageButton android:id="@+id/home"
+            android:id="@+id/home"
             android:layout_width="28.78dp"
             android:layout_height="30dp"
-            android:src="@drawable/logo"
+            android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
             android:id="@+id/nav"
